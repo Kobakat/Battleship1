@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctime>
 #include <iostream>
+#include "GridSpace.hpp"
 
 //This could be refactored to place all 5 ships at once, or it could just be called 5 times in whatever needs it (in this case: main)
 int PlaceShip(int * shipLocations)
@@ -27,21 +28,6 @@ int PlaceShip(int * shipLocations)
 	return random;
 }
 
-//Each of the 100 grid spaces in a 10x10 grid is represented as an object with a numerical location (1-100) and a bool defining whether a ship in the space
-class GridSpace
-{
-	public:
-
-	int location;
-	bool hasShip;
-
-	GridSpace()
-	{
-		this->location = 0;
-		this->hasShip = false;
-	}
-	
-};
 
 
 int main() 
@@ -69,7 +55,7 @@ int main()
 
 	//Sample console output available to demonstrate functionality
 
-	/*
+	
 	std::cout << "Ships are located at...\n";
 
 	for (int i = 0; i < 5; i++) 
@@ -87,7 +73,8 @@ int main()
 		std::cout << "Has Ship: " << grid[shipLocations[i]].hasShip;
 		std::cout << "\n";
 
-	} */
+	} 
+	
 
 	return 0;
 }
